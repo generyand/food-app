@@ -1,5 +1,5 @@
 import styles from "./nav.module.css";
 
 export default function Nav() {
-  return <div className={styles.nav}> Kaon</div>;
+  return <div className={styles.nav}>🍱 Kaon</div>;
 }
