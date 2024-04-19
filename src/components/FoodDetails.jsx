@@ -23,32 +23,31 @@ export default function FoodDetails({ foodId }) {
     <div>
       <div className={styles.recipeCard}>
         <h1 className={styles.recipeName}>{food.title}</h1>
-
-        <img src={food.image} />
-        <div>
+        <img className={styles.recipeImage} src={food.image} />
+        <div className={styles.recipeDetails}>
           <span>
             <strong>⌚ {food.readyInMinutes} Minutes</strong>
           </span>
           <span>👪 Serves {food.servings} </span>
-          <span>{food.vegetarian ? "🥕 Vegetarian" : "🥩 Non-Vegetarian"}</span>
-          <span>{food.vegan ? "🐮 Vegan" : ""}</span>
+          <span><strong>{food.vegetarian ? "🥕 Vegetarian" : "🥩 Non-Vegetarian"}</strong></span>
+          <span><strong>{food.vegan ? "🐮 Vegan" : ""}</strong></span>
         </div>
         <div>
-          $ <span>{food.pricePerServing / 100} Per Serving</span>
+          $ <span><strong>{food.pricePerServing / 100} Per Serving</strong></span>
         </div>
-      </div>
 
-      <div>
         <h2>Instructions</h2>
-        <ol>
-          {isLoading ? (
-            <p>Loading...</p>
-          ) : (
-            food.analyzedInstructions[0].steps.map((steps) => (
-              <li key={steps.number}>{steps.step}</li>
-            ))
-          )}
-        </ol>
+        <div className={styles.recipeInstructions}>
+          <ol>
+            {isLoading ? (
+              <p>Loading...</p>
+            ) : (
+              food.analyzedInstructions[0].steps.map((steps) => (
+                <li key={steps.number}>{steps.step}</li>
+              ))
+            )}
+          </ol>
+        </div>
       </div>
     </div>
   );

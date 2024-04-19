@@ -12,3 +12,33 @@
   font-size: 24px;
   margin-bottom: 10px;
 }
+
+.recipeImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  /* outline: 1px solid red; */
+}
+
+.recipeDetails {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipeInstructions {
+  padding: 0;
+  border-radius: 5px;
+  color: #adaab0;
+}
+
+.recipeInstruction ol {
+  margin-left: 0;
+}
+
+.recipeInstruction ol li {
+  margin: 10px 0px;
+  outline: 1px solid red;
+}
